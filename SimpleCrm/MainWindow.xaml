@@ -1,0 +1,22 @@
+﻿<Window x:Class="SimpleCrm.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimpleCrm"
+        xmlns:viewModels="clr-namespace:SimpleCrm.ViewModels"
+        xmlns:views="clr-namespace:SimpleCrm.Views"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        Height="720" Width="1200" WindowStyle="None" ResizeMode="NoResize"
+        AllowsTransparency="True" Background="Transparent" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewModels:MenuVModels}">
+            <views:MenuViews></views:MenuViews>
+        </DataTemplate>
+    </Window.Resources>
+    <Window.DataContext>
+        <viewModels:MainWindowVModels></viewModels:MainWindowVModels>
+    </Window.DataContext>
+    <ContentControl Content="{Binding CurrentVModels}"></ContentControl>
+</Window>
